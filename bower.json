@@ -1,13 +1,13 @@
 {
-  "name": "js-template",
+  "name": "angular-template",
   "description": "",
-  "main": "gulpfile.js",
+  "main": "app.js",
   "authors": [
     "browneryan <browneryan87@gmail.com>"
   ],
   "license": "ISC",
   "moduleType": [],
-  "homepage": "",
+  "homepage": "https://github.com/browneryan/js-template",
   "ignore": [
     "**/.*",
     "node_modules",
