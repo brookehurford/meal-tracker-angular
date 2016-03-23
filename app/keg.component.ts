@@ -6,7 +6,7 @@ import { KegListComponent } from './keg-list.component';
   selector: 'keg-display',
   inputs: ['keg'],
   template: `
-    <h3 (click)="kegClicked(keg)">{{ keg.name }}
+    <h3>{{ keg.name }}
       <em>{{ keg.brand }}</em>
       {{ keg.alcoholContent }}% -- {{ keg.price }} <br>
       Pints Left: {{ keg.pintsLeft }}
@@ -21,8 +21,5 @@ export class KegComponent {
   public filterLow: string = "all";
   kegWasSelected(clickedKeg: Keg): void {
     clickedKeg.pintsLeft--;
-    // if(clickedKeg.pintsLeft <= 10){
-    //   return this.keg.low;
-    // }
   }
 }
