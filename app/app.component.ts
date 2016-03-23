@@ -21,8 +21,4 @@ export class AppComponent {
       new Keg("Noggin’ Floggin'", "Hopworks 2011", 11.0, "$8", 124)
     ];
   }
-  kegWasSelected(clickedKeg: Keg): void {
-    clickedKeg.pintsLeft--;
-    console.log(clickedKeg.pintsLeft);
-  }
 }
