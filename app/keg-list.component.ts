@@ -12,14 +12,22 @@ import { EditKegComponent } from './edit-keg.components';
   pipes: [LowPipe, PricePipe],
   directives: [NewKegComponent, KegComponent, EditKegComponent],
   template: `
-    <select (change)="onChange($event.target.value)" class="filter">
-      <option value="all"  selected="selected">Show All</option>
-      <option value="low">Kegs with less than 10 pints</option>
-    </select>
-    <select (change)="onChangePrice($event.target.value)" class="filter">
-      <option value="all"  selected="selected">Show all</option>
-      <option value="deal">Pints less than &#36; 5</option>
-    </select>
+  <div class="form">
+    <div class="formFields">
+      <label>By Pints:</label>
+      <select (change)="onChange($event.target.value)" class="filter">
+        <option value="all"  selected="selected">Show All</option>
+        <option value="low">Kegs with less than 10 pints</option>
+      </select>
+    </div>
+    <div class="formFields">
+      <label>By Price:</label>
+      <select (change)="onChangePrice($event.target.value)" class="filter">
+        <option value="all"  selected="selected">Show all</option>
+        <option value="deal">Pints less than &#36; 5</option>
+      </select>
+    </div>
+  </div>
     <keg-display *ngFor="#keg of kegList | low:filterLow | price:filterDeal"
     (click)="kegClicked(keg)"
     [class.selected]="keg === selectedKeg"

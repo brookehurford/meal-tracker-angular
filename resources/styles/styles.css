@@ -2,9 +2,17 @@ h1 {
   color: black;
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .kegItem {
   padding-bottom: 20px;
   border-bottom: 1px solid black;
+  width: 100%;
 }
 
 .keg-form {
@@ -28,4 +36,52 @@ h1 {
 
 .alcohol {
   text-decoration: underline;
+}
+
+.form {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  margin: 35px auto;
+}
+
+.kegForm {
+  background-color: lightslategrey;
+  color: white;
+  letter-spacing: 1px;
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 35a0px;
+}
+
+.btn-new-keg {
+  background-color: darkslategrey;
+  color: white;
+  border: 2px solid darkslategrey;
+  width: 50%;
+  margin: 0 auto;
+  padding: 8px;
+  margin-top: 15px;
+  transition: all 500ms linear;
+}
+
+.btn-new-keg:hover {
+  background-color: white;
+  color: darkslategrey;
+}
+
+.formFields {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+}
+
+input {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  text-align: center;
+  height: 25px;
+  color: black;
 }

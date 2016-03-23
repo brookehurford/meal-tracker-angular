@@ -6,13 +6,14 @@ import { KegListComponent } from './keg-list.component';
   selector: 'keg-display',
   inputs: ['keg'],
   template: `
-    <h3>
-    {{ keg.name }}
+  <div class="kegItem">
+    <h3> {{ keg.name }}
       <em>{{ keg.brand }}</em>
       <span [class.alcohol]="keg.alcoholContent > 10">{{ keg.alcoholContent }}%</span> -- &#36;{{ keg.price }} <br>
       Pints Left: {{ keg.pintsLeft }}
     </h3>
     <button class="btn" (click)="kegWasSelected(keg)">Sell a pint</button>
+  </div>
   `
 })
 
