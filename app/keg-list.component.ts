@@ -18,6 +18,7 @@ import { EditKegComponent } from './edit-keg.components';
     <keg-display *ngFor="#keg of kegList | low:filterLow"
     (click)="kegClicked(keg)"
     [class.selected]="keg === selectedKeg"
+    [class.redFont]="keg.price < 5"
     [keg]="keg">
     </keg-display>
     <edit-keg *ngIf="selectedKeg" [keg]="selectedKeg">

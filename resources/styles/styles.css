@@ -1,5 +1,5 @@
 h1 {
-  color: blue;
+  color: black;
 }
 
 .kegItem {
@@ -9,4 +9,23 @@ h1 {
 
 .keg-form {
   margin: 50px auto;
+}
+
+.redFont {
+  color: lightslategrey;
+}
+
+.btn {
+  background-color: lightslategrey;
+  color: white;
+  border: 2px solid lightslategrey;
+}
+
+.btn:hover {
+  background-color: white;
+  color: lightslategrey;
+}
+
+.alcohol {
+  text-decoration: underline;
 }

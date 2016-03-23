@@ -6,12 +6,13 @@ import { KegListComponent } from './keg-list.component';
   selector: 'keg-display',
   inputs: ['keg'],
   template: `
-    <h3>{{ keg.name }}
+    <h3>
+    {{ keg.name }}
       <em>{{ keg.brand }}</em>
-      {{ keg.alcoholContent }}% -- {{ keg.price }} <br>
+      <span [class.alcohol]="keg.alcoholContent > 10">{{ keg.alcoholContent }}%</span> -- &#36;{{ keg.price }} <br>
       Pints Left: {{ keg.pintsLeft }}
     </h3>
-    <button class="btn btn-success" (click)="kegWasSelected(keg)">Sell a pint</button>
+    <button class="btn" (click)="kegWasSelected(keg)">Sell a pint</button>
   `
 })
 
@@ -23,3 +24,9 @@ export class KegComponent {
     clickedKeg.pintsLeft--;
   }
 }
+
+// kegColor(): void {
+//   if (this.keg.price < 5) {
+//     this.keg (class.yellowFont);
+//   }
+// }
