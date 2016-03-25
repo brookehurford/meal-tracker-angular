@@ -1,3 +1,14 @@
+$primaryColor: #90AA86;
+$secondaryColor: #4A2545;
+
+body {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
 h1 {
-  color: red;
+  color: $primaryColor;
+}
+
+hr {
+  border: 1px solid $secondaryColor;
 }

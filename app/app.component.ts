@@ -6,6 +6,12 @@ import { Meal } from './meal.model';
   template: `
     <div class="container">
       <h1>Meal Tracker</h1>
+      <hr>
+      <div *ngFor="#meal of meals">
+      <p>Name: {{ meal.name }}</p>
+      <p>Details: {{ meal.details }}</p>
+      <p>Calories: {{ meal.calories }}</p>
+      <hr>
     </div>
   `
 })
