@@ -9,7 +9,7 @@ import { EditMealComponent } from './edit-meal.component';
   directives: [ EditMealComponent, MealInfoComponent],
   template: `
   <div class="mealItem">
-    <p (click)="mealInfoClicked(meal)" [class.selectedInfo]="meal === selectedInfo">Name: {{ meal.name }}</p>
+    <p (click)="mealInfoClicked(meal)" [class.selectedInfo]="meal === selectedInfo">Meal: {{ meal.name }}</p>
     <meal-info *ngIf="selectedMealInfo" [meal]="selectedMealInfo"></meal-info>
     <button (click)="mealClicked(meal)" [class.selected]="meal === selectedMeal">Edit Meal Details</button>
     <edit-meal *ngIf="selectedMeal" [meal]="selectedMeal"></edit-meal>

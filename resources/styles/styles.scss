@@ -1,14 +1,84 @@
 $primaryColor: #90AA86;
-$secondaryColor: #4A2545;
+$secondaryColor: #DCCCA3;
+$darkPrimary: #4A2545;
 
 body {
   font-family: 'Roboto Condensed', sans-serif;
+  background-image: linear-gradient(to bottom, rgba(74, 37, 69, 1), rgba(74, 37, 69, 0.7), rgba(130, 76, 0, 0.4)), url("/resources/images/salad.jpg");
+  background-size: cover;
+  height: 100vh;
+  color: white;
 }
 
 h1 {
   color: $primaryColor;
+  text-shadow: 1px 1px 1px $secondaryColor;
+  font-size: 4em;
 }
 
 hr {
-  border: 1px solid $secondaryColor;
+  border: 1px solid $primaryColor;
+}
+
+.dropdowns {
+  background-color: $secondaryColor;
+  padding: 2%;
+  margin: 1% auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 7px;
+  label {
+    color: $darkPrimary;
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  select {
+    width: 40%;
+  }
+}
+
+.mealItem {
+  font-size: 18px;
+  letter-spacing: 2px;
+  margin: 30px auto;
+}
+
+button {
+  background-color: $primaryColor;
+  color: $darkPrimary;
+  border: none;
+  padding: 10px 20px;
+  font-size: 15px;
+}
+
+input {
+  color: $darkPrimary;
+  height: 41px;
+  width: 20%;
+  padding-left: 10px;
+}
+
+.editMeal {
+  background-color: white;
+  color: $darkPrimary;
+  padding: 3px 10px 18px 10px;
+  margin: 20px auto;
+  box-shadow: 2px 2px 2px $secondaryColor;
+  h3 {
+    font-size: 16px;
+    color: $darkPrimary;
+  }
+  input {
+    width: 32.5%;
+    font-size: 16px;
+  }
+}
+
+.footer {
+  color: white;
+  text-align: center;
+  padding-top: 5%;
 }

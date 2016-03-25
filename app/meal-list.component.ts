@@ -13,6 +13,7 @@ import { CaloriesPipe } from './calories.pipe';
   directives: [NewMealComponent, MealComponent],
   template: `
   <div class="dropdowns">
+  <label>View meals by Calorie Intake:</label>
   <select (change)="onChange($event.target.value)" class="filter">
     <option value="all"  selected="selected">Show All</option>
     <option value="healthy">Healthy Meals</option>
@@ -39,11 +40,5 @@ export class MealListComponent {
   }
   onChange(filterOption) {
   this.filterCalories = filterOption;
+  }
 }
-}
-
-// <p (click)="mealInfoClicked(meal)" [class.selectedInfo]="meal === selectedInfo">Name: {{ meal.name }}</p>
-// <meal-info *ngIf="selectedInfo" [meal]="selectedInfo"></meal-info>
-// <button (click)="mealClicked(meal)" [class.selected]="meal === selectedMeal">Edit Meal Details</button>
-// <edit-meal *ngIf="selectedMeal" [meal]="selectedMeal"></edit-meal>
-// <hr>
