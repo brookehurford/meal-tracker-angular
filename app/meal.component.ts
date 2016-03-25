@@ -10,7 +10,7 @@ import { EditMealComponent } from './edit-meal.component';
   template: `
   <div class="mealItem">
     <p (click)="mealInfoClicked(meal)" [class.selectedInfo]="meal === selectedInfo">Name: {{ meal.name }}</p>
-    <meal-info *ngIf="selectedInfo" [meal]="selectedInfo"></meal-info>
+    <meal-info *ngIf="selectedMealInfo" [meal]="selectedMealInfo"></meal-info>
     <button (click)="mealClicked(meal)" [class.selected]="meal === selectedMeal">Edit Meal Details</button>
     <edit-meal *ngIf="selectedMeal" [meal]="selectedMeal"></edit-meal>
     <hr>
