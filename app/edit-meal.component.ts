@@ -2,7 +2,7 @@ import { Component, EventEmitter } from 'angular2/core';
 import { Meal } from './meal.model';
 
 @Component({
-  selector: 'edit-keg',
+  selector: 'edit-meal',
   inputs: ['meal'],
   template: `
   <div class="editMeal">
