@@ -9,17 +9,14 @@ import { MealInfoComponent } from './meal-info.component';
   inputs: ['mealList'],
   directives: [NewMealComponent, EditMealComponent, MealInfoComponent],
   template: `
-  <div *ngFor="#meal of mealList"
-  (click)="mealClicked(meal)"
-  [class.selected]="meal === selectedMeal">
+  <div *ngFor="#meal of mealList">
     <p>Name: {{ meal.name }}</p>
-    <button (click)="mealInfoClicked(meal)"
-    [class.selectedInfo]="meal === selectedInfo">View Meal Info</button>
+    <button (click)="mealClicked(meal)" [class.selected]="meal === selectedMeal">Edit Meal Details</button>
+    <button (click)="mealInfoClicked(meal)" [class.selectedInfo]="meal === selectedInfo">View Meal Info</button>
     <hr>
   </div>
-  <meal-info *ngIf="selectedInfo" [meal]="selectedInfo">
-  <edit-meal *ngIf="selectedMeal" [meal]="selectedMeal">
-  </edit-meal>
+  <meal-info *ngIf="selectedInfo" [meal]="selectedInfo"></meal-info>
+  <edit-meal *ngIf="selectedMeal" [meal]="selectedMeal"></edit-meal>
   <new-meal (onSubmitNewMeal)="createMeal($event)"></new-meal>
   `
 })
