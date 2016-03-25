@@ -3,19 +3,16 @@ import { Meal } from './meal.model';
 import { NewMealComponent } from './new-meal.component';
 import { EditMealComponent } from './edit-meal.component';
 import { MealInfoComponent } from './meal-info.component';
+import { MealComponent } from './meal.component';
 
 @Component({
   selector: 'meal-list',
   inputs: ['mealList'],
-  directives: [NewMealComponent, EditMealComponent, MealInfoComponent],
+  directives: [NewMealComponent, EditMealComponent, MealInfoComponent, MealComponent],
   template: `
-  <div *ngFor="#meal of mealList">
-    <p (click)="mealInfoClicked(meal)" [class.selectedInfo]="meal === selectedInfo">Name: {{ meal.name }}</p>
-    <meal-info *ngIf="selectedInfo" [meal]="selectedInfo"></meal-info>
-    <button (click)="mealClicked(meal)" [class.selected]="meal === selectedMeal">Edit Meal Details</button>
-    <edit-meal *ngIf="selectedMeal" [meal]="selectedMeal"></edit-meal>
-    <hr>
-  </div>
+  <meal-display *ngFor="#meal of mealList"
+  [meal]="meal">
+  </meal-display>
   <new-meal (onSubmitNewMeal)="createMeal($event)"></new-meal>
   `
 })
@@ -40,3 +37,9 @@ export class MealListComponent {
     this.onMealInfoSelect.emit(clickedMealInfo);
   }
 }
+
+// <p (click)="mealInfoClicked(meal)" [class.selectedInfo]="meal === selectedInfo">Name: {{ meal.name }}</p>
+// <meal-info *ngIf="selectedInfo" [meal]="selectedInfo"></meal-info>
+// <button (click)="mealClicked(meal)" [class.selected]="meal === selectedMeal">Edit Meal Details</button>
+// <edit-meal *ngIf="selectedMeal" [meal]="selectedMeal"></edit-meal>
+// <hr>
