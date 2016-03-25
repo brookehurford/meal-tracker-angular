@@ -8,7 +8,7 @@ import { MealComponent } from './meal.component';
 @Component({
   selector: 'meal-list',
   inputs: ['mealList'],
-  directives: [NewMealComponent, EditMealComponent, MealInfoComponent, MealComponent],
+  directives: [NewMealComponent, MealComponent],
   template: `
   <meal-display *ngFor="#meal of mealList"
   [meal]="meal">
@@ -26,15 +26,6 @@ export class MealListComponent {
     this.mealList.push(
       new Meal(newMealInfo[0], newMealInfo[1], newMealInfo[2])
     );
-  }
-  mealClicked(clickedMeal: Meal): void {
-    console.log(clickedMeal.details);
-    this.selectedMeal = clickedMeal;
-    this.onMealSelect.emit(clickedMeal);
-  }
-  mealInfoClicked(clickedMealInfo: Meal): void {
-    this.selectedInfo = clickedMealInfo;
-    this.onMealInfoSelect.emit(clickedMealInfo);
   }
 }
 

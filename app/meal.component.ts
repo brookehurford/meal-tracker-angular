@@ -20,6 +20,10 @@ import { EditMealComponent } from './edit-meal.component';
 export class MealComponent {
   public meal: Meal;
   public mealList: Meal[];
+  public onMealSelect: EventEmitter<Meal>;
+  public onMealInfoSelect: EventEmitter<Meal>;
+  public selectedMeal: Meal;
+  public selectedMealInfo: Meal;
   mealClicked(clickedMeal: Meal): void {
     console.log(clickedMeal.details);
     this.selectedMeal = clickedMeal;
@@ -27,7 +31,7 @@ export class MealComponent {
   }
   mealInfoClicked(clickedMealInfo: Meal): void {
     console.log(clickedMealInfo);
-    this.selectedInfo = clickedMealInfo;
+    this.selectedMealInfo = clickedMealInfo;
     this.onMealInfoSelect.emit(clickedMealInfo);
   }
 }
